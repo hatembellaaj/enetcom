@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation and returns the result:</p>
+
+
+<input type="text" id="demo"><br><br>
+
+<button id ="b1" onclick="myFunction1()" value ="1" >1</button>
+<button id ="b2" onclick="myFunction2()" value ="2" >2</button>
+<button id ="b3" onclick="myFunction3()" value ="3" >3</button>
+<br>
+<button id ="b4" onclick="myFunction4()" value ="4" >4</button>
+<button id ="b5" onclick="myFunction5()" value ="5" >5</button>
+<button id ="b6" onclick="myFunction6()" value ="6" >6</button>
+<br>
+<button id ="plus" onclick="add()"  >+</button>
+<script>
+var val1=0;
+var bplus = false ;
+
+function myFunction1() {
+
+if (!bplus) {
+  document.getElementById("demo").value = document.getElementById("demo").value + 1;
+  }
+  else {
+    document.getElementById("demo").value = 1;
+    bplus = false ;
+  }
+}
+
+function myFunction2() {
+if (!bplus) {
+  document.getElementById("demo").value = document.getElementById("demo").value + 2;
+  }
+  else {
+    document.getElementById("demo").value = 2;
+    bplus = false ;
+  }
+}
+function myFunction3() {
+if (!bplus) {
+  document.getElementById("demo").value = document.getElementById("demo").value + 3;
+  }
+  else {
+    document.getElementById("demo").value = 3;
+    bplus = false ;
+  }
+}
+
+function add() {
+
+  val1 = parseFloat(document.getElementById("demo").value) ; 
+  bplus = true ;
+}
+
+
+</script>
+
+
+</body>
+</html>
+

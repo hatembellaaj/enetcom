@@ -5,58 +5,46 @@
 <h2>JavaScript Functions</h2>
 
 <p>This example calls a function which performs a calculation and returns the result:</p>
-
-
 <input type="text" id="demo"><br><br>
-
-<button id ="b1" onclick="myFunction1()" value ="1" >1</button>
-<button id ="b2" onclick="myFunction2()" value ="2" >2</button>
-<button id ="b3" onclick="myFunction3()" value ="3" >3</button>
-<br>
-<button id ="b4" onclick="myFunction4()" value ="4" >4</button>
-<button id ="b5" onclick="myFunction5()" value ="5" >5</button>
-<button id ="b6" onclick="myFunction6()" value ="6" >6</button>
-<br>
-<button id ="plus" onclick="add()"  >+</button>
+<button id ="b1" onclick="afficher('1')"  >1</button>
+<button id ="b2" onclick="afficher('2')"  >2</button>
+<button id ="b3" onclick="afficher('3')"  >3</button>
+<button id ="b4" onclick="afficher('4')"  >4</button><br>
+<button id ="b5" onclick="afficher('5')"  >5</button>
+<button id ="b6" onclick="afficher('6')"  >6</button>
+<button id ="b7" onclick="afficher('7')"  >7</button>
+<button id ="b8" onclick="afficher('8')"  >8</button><br>
+<button id ="b9" onclick="afficher('9')"  >9</button>
+<button id ="b0" onclick="afficher('0')"  >0</button>
+<button id ="div" onclick="afficher('/')"  >/ </button>
+<button id ="del" onclick="del()"  >ce</button><br>
+<button id ="plus" onclick="afficher('+')"  >+</button>
+<button id ="soustrac" onclick="afficher('-')"  >-</button>
+<button id ="mul" onclick="afficher('*')"  >*</button>
+<button id ="egal" onclick="equal()"  >=</button><br>
+<button id ="pt" onclick="afficher('.')"  >.</button>
+<button id ="eff" onclick="eff()">eff</button>
 <script>
-var val1=0;
-var bplus = false ;
-
-function myFunction1() {
-
-if (!bplus) {
-  document.getElementById("demo").value = document.getElementById("demo").value + 1;
-  }
-  else {
-    document.getElementById("demo").value = 1;
-    bplus = false ;
-  }
-}
-
-function myFunction2() {
-if (!bplus) {
-  document.getElementById("demo").value = document.getElementById("demo").value + 2;
-  }
-  else {
-    document.getElementById("demo").value = 2;
-    bplus = false ;
-  }
-}
-function myFunction3() {
-if (!bplus) {
-  document.getElementById("demo").value = document.getElementById("demo").value + 3;
-  }
-  else {
-    document.getElementById("demo").value = 3;
-    bplus = false ;
-  }
-}
-
-function add() {
-
-  val1 = parseFloat(document.getElementById("demo").value) ; 
-  bplus = true ;
-}
+ function equal() 
+         { 
+             let a = document.getElementById("demo").value;
+             let b = eval(a); 
+             document.getElementById("demo").value = b;
+             document.getElementById("result").innerHTML = b;
+         } 
+      function afficher(val) 
+         { 
+             document.getElementById("demo").value+=val 
+         } 
+         function del() 
+         { 
+             document.getElementById("demo").value = "";
+             document.getElementById("result").value = 0;
+         } 
+       function eff() 
+         { 
+             document.getElementById("demo").value=document.getElementById("demo").value.slice(0,-1);
+         }
 
 
 </script>
@@ -64,4 +52,3 @@ function add() {
 
 </body>
 </html>
-

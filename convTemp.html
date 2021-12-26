@@ -2,27 +2,24 @@
 <body>
 
 
-<h2>JavaScript Functions</h2>
-
-<p>This example calls a function which performs a conversion from Celsius to Fahrenheit and vice versa:</p>
-
-<table>
+<h2 style="text-align:center">Convertisseur Celsius/Fahrenheit </h2>
+<table style="text-align:center">
 	<tr>
-    	<td>
+    	<td >
           <div>
-              <input type="text" id="i1"><br>
+              <input  type="number" id="i1" onkeyup="i1KeyUp()"><br>
               <select id="mySelect" onchange="myFunction()">
-                  <option value="c">Degré Celsus</option>
+                  <option value="c">Degré Celsius</option>
                   <option value="f">Degré Fahrenheit</option>
               </select>    
           </div>
 		</td>
 		<td>
           <div>
-              <input type="text" id="i2"><br>
+              <input type="number" id="i2" onkeyup="i2KeyUp()"><br>
               <select id="mySelect2" onchange="myFunction2()">
-                  <option value="c">Degré Celsus</option>
                   <option value="f">Degré Fahrenheit</option>
+                  <option value="c">Degré Celsius</option>
               </select>    
           </div>
 		</td>
@@ -32,43 +29,68 @@
 <script>
 
 function myFunction() {
-	console.log("I am in my function ");
   var x = document.getElementById("mySelect").value;
   if (x =="c"){
-  	document.getElementById("mySelect2").value = "f";
+  	document.getElementById("mySelect2").value="f";
    }else{
    	document.getElementById("mySelect2").value = "c";
    }
     
 }
-
-
-</script>
-
-<br><br>
-<button onclick="myFunction()">Click me to convert from Celsius to Fahrenheit</button>
- <input type="text" id="c1"><br><br>
- <p>Result:</p> <input type="text" id="f1"><br><br>
- <button onclick="myFunction2()">Click me to convert from Fahrenheit to Celsius </button>
- <input type="text" id="f2"><br><br>
- <p>Result:</p> <input type="text" id="c2"><br><br>
- 
-
-<script>
-function ctof(a) {
-  return (( a * 1.8 ) + 32);
-}
-function ftoc(b) {
-  return (( b - 32 ) / 1.8);
-}
-function myFunction() {
-  document.getElementById("f1").value = ctof(parseFloat(document.getElementById("c1").value)) ;
-}
 function myFunction2() {
-  document.getElementById("c2").value = ftoc(parseFloat(document.getElementById("f2").value)) ;
+  var x = document.getElementById("mySelect2").value;
+  if (x =="c"){
+  	document.getElementById("mySelect").value="f";
+   }else{
+   	document.getElementById("mySelect").value = "c";
+   }
+    
+}
+
+function i1KeyUp() {
+var x = document.getElementById("mySelect").value;
+if(x=="c"){
+document.getElementById("i2").value=(parseFloat(document.getElementById("i1").value)*(9/5))+32;
+}
+else{ document.getElementById("i2").value =(parseFloat(document.getElementById("i1").value)-32)*(5/9);
+
+}
+}
+function i2KeyUp() {
+var y=document.getElementById("mySelect2").value;
+if(y=="c"){
+document.getElementById("i1").value=(parseFloat(document.getElementById("i2").value)*(9/5))+32;
+}
+else{ 
+document.getElementById("i1").value =(parseFloat(document.getElementById("i2").value)-32)*(5/9);
+}
+
 }
 </script>
+</body>
+</html>
 
+}
 
+function i1KeyUp() {
+var x = document.getElementById("mySelect").value;
+if(x=="c"){
+document.getElementById("i2").value=(parseFloat(document.getElementById("i1").value)*(9/5))+32;
+}
+else{ document.getElementById("i2").value =(parseFloat(document.getElementById("i1").value)-32)*(5/9);
+
+}
+}
+function i2KeyUp() {
+var y=document.getElementById("mySelect2").value;
+if(y=="c"){
+document.getElementById("i1").value=(parseFloat(document.getElementById("i2").value)*(9/5))+32;
+}
+else{ 
+document.getElementById("i1").value =(parseFloat(document.getElementById("i2").value)-32)*(5/9);
+}
+
+}
+</script>
 </body>
 </html>

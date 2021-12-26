@@ -69,28 +69,3 @@ document.getElementById("i1").value =(parseFloat(document.getElementById("i2").v
 </script>
 </body>
 </html>
-
-}
-
-function i1KeyUp() {
-var x = document.getElementById("mySelect").value;
-if(x=="c"){
-document.getElementById("i2").value=(parseFloat(document.getElementById("i1").value)*(9/5))+32;
-}
-else{ document.getElementById("i2").value =(parseFloat(document.getElementById("i1").value)-32)*(5/9);
-
-}
-}
-function i2KeyUp() {
-var y=document.getElementById("mySelect2").value;
-if(y=="c"){
-document.getElementById("i1").value=(parseFloat(document.getElementById("i2").value)*(9/5))+32;
-}
-else{ 
-document.getElementById("i1").value =(parseFloat(document.getElementById("i2").value)-32)*(5/9);
-}
-
-}
-</script>
-</body>
-</html>
